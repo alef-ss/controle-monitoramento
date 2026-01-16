@@ -2,5 +2,10 @@ from app import app
 from flask import render_template, redirect, url_for
 
 @app.route('/')
-def home():
+def login():
   return render_template("login.html")
+
+@app.route('/home')
+def home():
+  usuario = "Saci de Patinete"
+  return render_template("home.html", usuario=usuario)
